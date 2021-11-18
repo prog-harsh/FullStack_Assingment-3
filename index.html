@@ -117,33 +117,109 @@
         .un-submitted {
             color: red;
         }
+        
+        #loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #243b55;
+            border-bottom: 16px solid #243b55;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+        
+        .main-loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+        
+        .main {
+            display: none;
+        }
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                right: 100%;
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s;
+        }
+        
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -30px;
+                opacity: 0.7
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatebottom {
+            from {
+                bottom: -30px;
+                opacity: 0.7
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
     </style>
 </head>
 
-<body>
-    <h1 style="text-align: center; margin: 20px;">List of all Practicals</h1>
-    <div class="main-container">
-        <table>
-            <caption>
-                Fullstack Live Practical Book
-            </caption>
-            <thead>
-                <tr class="heading">
-                    <th>#</th>
-                    <th>Practical Name</th>
-                    <th>Link</th>
-                    <th>Status</th>
-                    <th>Tools</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        Create Your First Web page using: HTML Editor, Online Sandbox Environment.
-                    </td>
-                    <td>
-                        <a href="./Practicals/Practical1.html" target="_blank">Practical-1</a
+<body onload="myFunction()">
+    <div class="main-loader">
+        <div id="loader"></div>
+    </div>
+    <div class="main animate-bottom">
+        <h1 style="text-align: center; margin: 20px;">List of all Practicals</h1>
+        <div class="main-container">
+            <table>
+                <caption>
+                    Fullstack Live Practical Book
+                </caption>
+                <thead>
+                    <tr class="heading">
+                        <th>#</th>
+                        <th>Practical Name</th>
+                        <th>Link</th>
+                        <th>Status</th>
+                        <th>Tools</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            Create Your First Web page using: HTML Editor, Online Sandbox Environment.
+                        </td>
+                        <td>
+                            <a href="./Practicals/Practical1.html" target="_blank">Practical-1</a
                             >
                         </td>
                         <td class="submitted">Submitted</td>
@@ -349,30 +425,44 @@
                         </td>
                         <td>
                             <a href="./Practicals/Practical-12.html">Practical-12</a>
-                    </td>
-                    <td class="submitted">Submitted</td>
-                    <td>
-                        <i title="edit" class="fa fa-pen edit"></i>
-                        <i title="delete" class="fa fa-trash-alt delete"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>
-                        CCreate a Custom Price Table Template.
-                    </td>
-                    <td>
-                        <a href="./Practicals/Practical-13.html">Practical-13</a>
-                    </td>
-                    <td class="submitted">Submitted</td>
-                    <td>
-                        <i title="edit" class="fa fa-pen edit"></i>
-                        <i title="delete" class="fa fa-trash-alt delete"></i>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        </td>
+                        <td class="submitted">Submitted</td>
+                        <td>
+                            <i title="edit" class="fa fa-pen edit"></i>
+                            <i title="delete" class="fa fa-trash-alt delete"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>
+                            CCreate a Custom Price Table Template.
+                        </td>
+                        <td>
+                            <a href="./Practicals/Practical-13.html">Practical-13</a>
+                        </td>
+                        <td class="submitted">Submitted</td>
+                        <td>
+                            <i title="edit" class="fa fa-pen edit"></i>
+                            <i title="delete" class="fa fa-trash-alt delete"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+    <script>
+        function myFunction() {
+            setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.querySelector("#loader").style.display = "none";
+            document.querySelector(".main-loader").style.height = 0;
+
+            document.querySelector(".main").style.display = "block";
+        }
+    </script>
 </body>
 
 </html>

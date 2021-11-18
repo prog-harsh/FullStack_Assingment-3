@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background-image: url(https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBjb21wdXRlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1920&q=150);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 80px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    padding: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 80px;
+    font-size: 20px;
+    padding: 15px;
+    /* transition: 300ms; */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li:hover {
+    background-color: #2D928D;
+    border-radius: 20px;
+}
+
+main {
+    height: 83.1vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
+.container {
+    width: 650px;
+}
+
+.container p {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.white-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(102, 101, 101);
+    font-size: 20px;
+    background-color: white;
+    height: 120px;
+    width: 1200px;
+    margin-top: 50px;
+}
+
+.divider {
+    background-color: rgb(102, 101, 101);
+    height: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 16px;
+    background-color: #2D928D;
+    min-width: 200px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.mar {
+    margin-left: 30px;
+}
